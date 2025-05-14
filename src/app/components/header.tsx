@@ -1,10 +1,10 @@
 "use client";
 
+import { GoSun } from "react-icons/go";
+import { MdDarkMode } from "react-icons/md";
+import { useAuth } from "../context/AuthContext";
 import { useTheme } from "../context/ThemeContext";
 import { Button } from "./button";
-import { useAuth } from "@/context/AuthContext";
-import { MdDarkMode } from "react-icons/md";
-import { GoSun } from "react-icons/go";
 
 export default function Header() {
   const { toggleTheme, theme } = useTheme();

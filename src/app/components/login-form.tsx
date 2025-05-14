@@ -1,7 +1,8 @@
 import { useForm } from "react-hook-form";
+import { useAuth } from "../context/AuthContext";
+import { useTheme } from "../context/ThemeContext";
 import { Button } from "./button";
-import { useAuth } from "@/context/AuthContext";
-import { useTheme } from "@/context/ThemeContext";
+
 interface LoginFormProps {
   name: string;
 }

@@ -1,9 +1,9 @@
 "use client";
 
 import { FaRegEdit, FaRegTrashAlt } from "react-icons/fa";
+import { useTheme } from "../context/ThemeContext";
+import { TaskProps } from "../types/task";
 import { Button } from "./button";
-import { TaskProps } from "@/types/task";
-import { useTheme } from "@/context/ThemeContext";
 
 interface TaskExampleProps {
   title: string;

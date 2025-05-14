@@ -1,13 +1,11 @@
 "use client";
 
-import { Dashboard } from "@/components/dashboard";
-import Header from "@/components/header";
-import { LoginForm } from "@/components/login-form";
-import { TaskForm } from "@/components/taks-form";
-import { TaskExample } from "@/components/task-example";
-import { useAuth } from "@/context/AuthContext";
-import { TaskProps } from "@/types/task";
 import { useState } from "react";
+import { Dashboard } from "./components/dashboard";
+import Header from "./components/header";
+import { LoginForm } from "./components/login-form";
+import { useAuth } from "./context/AuthContext";
+import { TaskProps } from "./types/task";
 
 export default function Home() {
   const { user } = useAuth();

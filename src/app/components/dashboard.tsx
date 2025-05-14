@@ -1,13 +1,13 @@
 import React from "react";
-import { TaskExample } from "./task-example";
+import { TaskProps } from "../types/task";
+import { User } from "../types/user";
 import { TaskForm } from "./taks-form";
-import { TaskProps } from "@/types/task";
-import { User } from "@/types/user";
+import { TaskExample } from "./task-example";
 
 interface DashboardProps {
   user: User;
   tasks: TaskProps[];
-  setTasks: React.Dispatch<React.SetStateAction<any[]>>;
+  setTasks: React.Dispatch<React.SetStateAction<TaskProps[]>>;
 }
 
 export function Dashboard({ user, setTasks, tasks }: DashboardProps) {

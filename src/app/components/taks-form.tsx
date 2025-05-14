@@ -1,10 +1,10 @@
 "use client";
 
-import { TaskProps } from "@/types/task";
-import { IoMdAdd } from "react-icons/io";
-import { Button } from "./button";
 import { useForm } from "react-hook-form";
-import { useTheme } from "@/context/ThemeContext";
+import { IoMdAdd } from "react-icons/io";
+import { useTheme } from "../context/ThemeContext";
+import { TaskProps } from "../types/task";
+import { Button } from "./button";
 
 interface TaskFormProps {
   setTasks: React.Dispatch<React.SetStateAction<TaskProps[]>>;

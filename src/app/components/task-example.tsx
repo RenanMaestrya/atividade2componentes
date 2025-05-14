@@ -24,6 +24,29 @@ export function TaskExample({
     setTasks(tasks.filter((task) => task.title != title));
   }
 
+  function handleEditTask() {
+    const newTitle = prompt("Editar título da tarefa:", title);
+    const newDescription = prompt("Editar descrição da tarefa:", description);
+    if (newTitle && newDescription) {
+      setTasks(
+        tasks.map((task) =>
+          task.title === title
+            ? { ...task, title: newTitle, description: newDescription }
+            : task
+        )
+      );
+    }
+  }
+
+  function handleCheckTask() {
+    const taskIndex = tasks.findIndex((task) => task.title === title);
+    if (taskIndex !== -1) {
+      const updatedTasks = [...tasks];
+      updatedTasks[taskIndex].completed = !updatedTasks[taskIndex].completed;
+      setTasks(updatedTasks);
+    }
+  }
+
   return (
     <div
       className={
@@ -32,12 +55,33 @@ export function TaskExample({
       }
     >
       <div className="flex items-center justify-between p-4">
-        <div className="flex flex-rown items-center gap-2">
-          <input type="checkbox" className="border-1 rounded border-gray-300" />
-          <h3 className="font-bold">{title}</h3>
+        <div className="flex flex-row items-center gap-2">
+          <input
+            type="checkbox"
+            className="border-1 rounded border-gray-300"
+            checked={
+              tasks.find((task) => task.title === title)?.completed || false
+            }
+            onChange={handleCheckTask}
+          />
+          <h3
+            className={`font-bold ${
+              tasks.find((task) => task.title === title)?.completed
+                ? "line-through"
+                : ""
+            }`}
+          >
+            {title}
+          </h3>
         </div>
         <div className="flex items-center gap-1 flex-row">
-          <Button variants="ghost" onClick={() => {}} size="small">
+          <Button
+            variants="ghost"
+            onClick={() => {
+              handleEditTask();
+            }}
+            size="small"
+          >
             <FaRegEdit />
           </Button>
           <Button variants="ghost" onClick={handleRemoveTask} size="small">

@@ -26,7 +26,7 @@ export function TaskForm({ setTasks }: TaskFormProps) {
   const { theme } = useTheme();
 
   function onSubmit(data: FormInputs) {
-    setTasks((prevTasks) => [...prevTasks, data]);
+    setTasks((prevTasks) => [...prevTasks, { ...data, completed: false }]);
     reset();
   }
 

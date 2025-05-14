@@ -14,7 +14,7 @@ export function Dashboard({ user, setTasks, tasks }: DashboardProps) {
   return (
     <div className="flex flex-col items-center justify-center min-h-screen p-4 bg-inherit gap-4">
       <h3 className="text-3xl font-bold mb-4 text-inherit">
-        {user.name}, aqui está sua lista de tarefas
+        Bem vindo, {user.name}!
       </h3>
       <TaskForm setTasks={setTasks} />
       <div className="flex flex-row items-center justify-between gap-4 w-full flex-wrap">

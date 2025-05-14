@@ -1,4 +1,5 @@
 export interface TaskProps {
-    title: string;
-    description: string;
-  }
+  completed: boolean;
+  title: string;
+  description: string;
+}
